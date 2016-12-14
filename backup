@@ -1,8 +1,8 @@
 #!/bin/bash
 
 TARGET=/tmp/backup
-FILE=$TARGET/etc.tar
+FILE=$TARGET/$2.tar
 
 mkdir $TARGET
-tar cf $FILE /etc/profile.d
-gzip -9 $FILE
+tar cf $FILE $1
+gzip -f -9 $FILE
