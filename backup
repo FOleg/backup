@@ -3,9 +3,16 @@
 # $@ => "$1" $2 ...
 function error() { cat <<<"$@" 1>&2; }
 
+function help() {
+	echo "Usage $(basename $0) DIR
+				write DIR directory to backup"
+
+}
+
 #if [ -z "$1" ]; then
 if [ ! "$1" ]; then
 	error "no directory"
+	help
 	exit 1
 fi
 
