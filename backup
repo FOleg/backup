@@ -1,3 +1,8 @@
 #!/bin/bash
 
-tar cf etc.tar -C /etc/profile.d .
+TARGET=/tmp/backup
+FILE=$TARGET/etc.tar
+
+mkdir $TARGET
+tar cf $FILE /etc/profile.d
+gzip -9 $FILE
