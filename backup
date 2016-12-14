@@ -23,6 +23,11 @@ TARGET=/tmp/backup
 BNAME=$(basename $1)
 FILE=$TARGET/$BNAME.tar
 
-mkdir $TARGET
+#if [  ! -d $TARGET ]; then
+#	mkdir $TARGET
+#tar cf $FILE $1
+#gzip -f -9 $FILE
+
+[ -d $TARGET ] || mkdir $TARGET
 tar cf $FILE $1
 gzip -f -9 $FILE
